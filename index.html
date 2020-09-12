@@ -1,0 +1,770 @@
+<html
+	<head>
+		<title>Integrations</title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript" charset="utf-8">
+      integrationssdf = [{
+        "name": "Atlassian",
+        "icon": "https://www.atlassian.com/assets/img/icons/imkt/imkt-navbar__charlie-logo.svg",
+        "description": "Atlassian is an Australian enterprise software multinational that develops products for software development, project management, and content management. Its well-known products include issue tracking application Jira and its team collaboration and wiki product Confluence.",
+        "search": "atlassian",
+        "modules": [
+          "puppet/confluence",
+          "puppet/jira",
+          "puppet/stash",
+          "joshbeard/bamboo",
+          "thewired/bitbucket"
+        ]
+      },
+      {
+        "name": "Atlassian",
+        "icon": "https://www.atlassian.com/assets/img/icons/imkt/imkt-navbar__charlie-logo.svg",
+        "description": "Atlassian is an Australian enterprise software multinational that develops products for software development, project management, and content management. Its well-known products include issue tracking application Jira and its team collaboration and wiki product Confluence.",
+        "search": "atlassian",
+        "modules": [
+          "puppet/confluence",
+          "puppet/jira",
+          "puppet/stash",
+          "joshbeard/bamboo",
+          "thewired/bitbucket"
+        ]
+      }]
+
+      results = {
+      	"puppet/confluence": {
+      		"uri": "/v3/modules/puppet-confluence",
+      		"slug": "puppet-confluence",
+      		"name": "confluence",
+      		"downloads": 595205,
+      		"created_at": "2015-03-22 15:21:26 -0700",
+      		"updated_at": "2020-05-10 03:16:57 -0700",
+      		"deprecated_at": null,
+      		"deprecated_for": null,
+      		"superseded_by": null,
+      		"supported": false,
+      		"endorsement": "approved",
+      		"module_group": "base",
+      		"owner": {
+      			"uri": "/v3/users/puppet",
+      			"slug": "puppet",
+      			"username": "puppet",
+      			"gravatar_id": "40f0d703b950e4e651e0fec493a6caee"
+      		},
+      		"current_release": {
+      			"uri": "/v3/releases/puppet-confluence-4.0.0",
+      			"slug": "puppet-confluence-4.0.0",
+      			"module": {
+      				"uri": "/v3/modules/puppet-confluence",
+      				"slug": "puppet-confluence",
+      				"name": "confluence",
+      				"deprecated_at": null,
+      				"owner": {
+      					"uri": "/v3/users/puppet",
+      					"slug": "puppet",
+      					"username": "puppet",
+      					"gravatar_id": "40f0d703b950e4e651e0fec493a6caee"
+      				}
+      			},
+      			"version": "4.0.0",
+      			"metadata": {
+      				"name": "puppet-confluence",
+      				"version": "4.0.0",
+      				"author": "Vox Pupuli",
+      				"summary": "Install atlassian confluence",
+      				"license": "MIT",
+      				"source": "https://github.com/voxpupuli/puppet-confluence.git",
+      				"project_page": "https://github.com/voxpupuli/puppet-confluence",
+      				"issues_url": "https://github.com/voxpupuli/puppet-confluence/issues",
+      				"dependencies": [{
+      						"name": "camptocamp/systemd",
+      						"version_requirement": ">= 1.0.0 < 3.0.0"
+      					},
+      					{
+      						"name": "puppet/archive",
+      						"version_requirement": ">= 1.0.0 < 5.0.0"
+      					},
+      					{
+      						"name": "puppet/staging",
+      						"version_requirement": ">= 2.0.1 < 4.0.0"
+      					},
+      					{
+      						"name": "puppet/mysql_java_connector",
+      						"version_requirement": ">= 3.0.2 < 4.0.0"
+      					},
+      					{
+      						"name": "puppetlabs/stdlib",
+      						"version_requirement": ">= 4.13.1 < 7.0.0"
+      					}
+      				],
+      				"data_provider": null,
+      				"description": "Atlassian confluence",
+      				"requirements": [{
+      					"name": "puppet",
+      					"version_requirement": ">= 5.5.8 < 7.0.0"
+      				}],
+      				"operatingsystem_support": [{
+      						"operatingsystem": "RedHat",
+      						"operatingsystemrelease": [
+      							"6",
+      							"7"
+      						]
+      					},
+      					{
+      						"operatingsystem": "CentOS",
+      						"operatingsystemrelease": [
+      							"6",
+      							"7"
+      						]
+      					},
+      					{
+      						"operatingsystem": "Ubuntu",
+      						"operatingsystemrelease": [
+      							"16.04",
+      							"18.04"
+      						]
+      					},
+      					{
+      						"operatingsystem": "Debian",
+      						"operatingsystemrelease": [
+      							"9"
+      						]
+      					}
+      				]
+      			},
+      			"tags": [
+
+      			],
+      			"supported": false,
+      			"pdk": false,
+      			"validation_score": 100,
+      			"file_uri": "/v3/files/puppet-confluence-4.0.0.tar.gz",
+      			"file_size": 27962,
+      			"file_md5": "d5b911c08c9ef14a2f4a75f51f45584d",
+      			"file_sha256": "f9d7bf5b9415705edadcc7b7bb9fb8cb0aec9ca4093e96f28b130bd677b87dfd",
+      			"downloads": 1243,
+      			"tasks": [
+
+      			],
+      			"plans": [
+
+      			],
+      			"created_at": "2020-05-10 03:16:57 -0700",
+      			"updated_at": "2020-05-10 03:16:57 -0700",
+      			"deleted_at": null,
+      			"deleted_for": null
+      		},
+      		"feedback_score": 90,
+      		"homepage_url": "https://github.com/voxpupuli/puppet-confluence",
+      		"issues_url": "https://github.com/voxpupuli/puppet-confluence/issues"
+      	},
+      	"puppet/jira": {
+      		"uri": "/v3/modules/puppet-jira",
+      		"slug": "puppet-jira",
+      		"name": "jira",
+      		"downloads": 167343,
+      		"created_at": "2015-04-25 10:45:32 -0700",
+      		"updated_at": "2020-06-17 11:33:08 -0700",
+      		"deprecated_at": null,
+      		"deprecated_for": null,
+      		"superseded_by": null,
+      		"supported": false,
+      		"endorsement": "approved",
+      		"module_group": "base",
+      		"owner": {
+      			"uri": "/v3/users/puppet",
+      			"slug": "puppet",
+      			"username": "puppet",
+      			"gravatar_id": "40f0d703b950e4e651e0fec493a6caee"
+      		},
+      		"current_release": {
+      			"uri": "/v3/releases/puppet-jira-4.0.1",
+      			"slug": "puppet-jira-4.0.1",
+      			"module": {
+      				"uri": "/v3/modules/puppet-jira",
+      				"slug": "puppet-jira",
+      				"name": "jira",
+      				"deprecated_at": null,
+      				"owner": {
+      					"uri": "/v3/users/puppet",
+      					"slug": "puppet",
+      					"username": "puppet",
+      					"gravatar_id": "40f0d703b950e4e651e0fec493a6caee"
+      				}
+      			},
+      			"version": "4.0.1",
+      			"metadata": {
+      				"name": "puppet-jira",
+      				"version": "4.0.1",
+      				"author": "Vox Pupuli",
+      				"summary": "Module to install, configure and manage Atlassian Jira",
+      				"license": "Apache-2.0",
+      				"source": "https://github.com/voxpupuli/puppet-jira.git",
+      				"project_page": "https://github.com/voxpupuli/puppet-jira.git",
+      				"issues_url": "https://github.com/voxpupuli/puppet-jira/issues",
+      				"dependencies": [{
+      						"name": "puppet/archive",
+      						"version_requirement": ">= 1.0.0 < 5.0.0"
+      					},
+      					{
+      						"name": "puppet/staging",
+      						"version_requirement": ">= 2.0.1 < 4.0.0"
+      					},
+      					{
+      						"name": "puppetlabs/stdlib",
+      						"version_requirement": ">= 4.25.0 < 7.0.0"
+      					}
+      				],
+      				"data_provider": null,
+      				"description": "Module to install, configure and manage Atlassian Jira",
+      				"tags": [
+      					"jira"
+      				],
+      				"requirements": [{
+      					"name": "puppet",
+      					"version_requirement": ">= 5.5.8 < 7.0.0"
+      				}],
+      				"operatingsystem_support": [{
+      						"operatingsystem": "RedHat",
+      						"operatingsystemrelease": [
+      							"6",
+      							"7"
+      						]
+      					},
+      					{
+      						"operatingsystem": "CentOS",
+      						"operatingsystemrelease": [
+      							"6",
+      							"7"
+      						]
+      					},
+      					{
+      						"operatingsystem": "OracleLinux",
+      						"operatingsystemrelease": [
+      							"6",
+      							"7"
+      						]
+      					},
+      					{
+      						"operatingsystem": "Scientific",
+      						"operatingsystemrelease": [
+      							"6",
+      							"7"
+      						]
+      					},
+      					{
+      						"operatingsystem": "Ubuntu",
+      						"operatingsystemrelease": [
+      							"16.04"
+      						]
+      					}
+      				]
+      			},
+      			"tags": [
+      				"jira"
+      			],
+      			"supported": false,
+      			"pdk": false,
+      			"validation_score": 100,
+      			"file_uri": "/v3/files/puppet-jira-4.0.1.tar.gz",
+      			"file_size": 43311,
+      			"file_md5": "c8dc0fad428d3e8f89aed043471dd3fa",
+      			"file_sha256": "01c60a3238c41e618d663bb4e78fcb08e74f28df84ae33cf95d44257aa0e9ae1",
+      			"downloads": 1323,
+      			"tasks": [
+
+      			],
+      			"plans": [
+
+      			],
+      			"created_at": "2020-06-17 11:33:08 -0700",
+      			"updated_at": "2020-06-17 11:33:08 -0700",
+      			"deleted_at": null,
+      			"deleted_for": null
+      		},
+      		"feedback_score": 78,
+      		"homepage_url": "https://github.com/voxpupuli/puppet-jira.git",
+      		"issues_url": "https://github.com/voxpupuli/puppet-jira/issues"
+      	},
+      	"puppet/stash": {
+      		"uri": "/v3/modules/puppet-stash",
+      		"slug": "puppet-stash",
+      		"name": "stash",
+      		"downloads": 108424,
+      		"created_at": "2015-03-22 05:14:07 -0700",
+      		"updated_at": "2020-05-07 12:12:19 -0700",
+      		"deprecated_at": null,
+      		"deprecated_for": null,
+      		"superseded_by": null,
+      		"supported": false,
+      		"endorsement": "approved",
+      		"module_group": "base",
+      		"owner": {
+      			"uri": "/v3/users/puppet",
+      			"slug": "puppet",
+      			"username": "puppet",
+      			"gravatar_id": "40f0d703b950e4e651e0fec493a6caee"
+      		},
+      		"current_release": {
+      			"uri": "/v3/releases/puppet-stash-4.0.0",
+      			"slug": "puppet-stash-4.0.0",
+      			"module": {
+      				"uri": "/v3/modules/puppet-stash",
+      				"slug": "puppet-stash",
+      				"name": "stash",
+      				"deprecated_at": null,
+      				"owner": {
+      					"uri": "/v3/users/puppet",
+      					"slug": "puppet",
+      					"username": "puppet",
+      					"gravatar_id": "40f0d703b950e4e651e0fec493a6caee"
+      				}
+      			},
+      			"version": "4.0.0",
+      			"metadata": {
+      				"name": "puppet-stash",
+      				"version": "4.0.0",
+      				"author": "Vox Pupuli",
+      				"summary": "Install Atlassian stash",
+      				"license": "MIT",
+      				"source": "https://github.com/voxpupuli/puppet-stash.git",
+      				"project_page": "https://github.com/voxpupuli/puppet-stash",
+      				"issues_url": "https://github.com/voxpupuli/puppet-stash/issues",
+      				"dependencies": [{
+      						"name": "puppet/archive",
+      						"version_requirement": ">= 1.0.0 < 5.0.0"
+      					},
+      					{
+      						"name": "puppetlabs/inifile",
+      						"version_requirement": ">= 1.4.1 < 5.0.0"
+      					},
+      					{
+      						"name": "puppet/staging",
+      						"version_requirement": ">= 2.0.1 < 4.0.0"
+      					},
+      					{
+      						"name": "puppetlabs/stdlib",
+      						"version_requirement": ">= 4.13.1 < 7.0.0"
+      					}
+      				],
+      				"data_provider": null,
+      				"description": "Module to install Atlassian Stash. On-premises source code management for Git that's secure, fast, and enterprise grade.",
+      				"tags": [
+      					"bitbucket",
+      					"stash"
+      				],
+      				"operatingsystem_support": [{
+      						"operatingsystem": "RedHat",
+      						"operatingsystemrelease": [
+      							"6",
+      							"7"
+      						]
+      					},
+      					{
+      						"operatingsystem": "CentOS",
+      						"operatingsystemrelease": [
+      							"6",
+      							"7"
+      						]
+      					},
+      					{
+      						"operatingsystem": "Ubuntu",
+      						"operatingsystemrelease": [
+      							"14.04",
+      							"18.04"
+      						]
+      					}
+      				],
+      				"requirements": [{
+      					"name": "puppet",
+      					"version_requirement": ">= 5.5.8 < 7.0.0"
+      				}]
+      			},
+      			"tags": [
+      				"bitbucket",
+      				"stash"
+      			],
+      			"supported": false,
+      			"pdk": false,
+      			"validation_score": 100,
+      			"file_uri": "/v3/files/puppet-stash-4.0.0.tar.gz",
+      			"file_size": 30112,
+      			"file_md5": "b811e59750473396e897bfc29f18e198",
+      			"file_sha256": "4d45f29f8241dc138da4f03b174abe8512a92c3e26a83d28a38405fd0b0fb30d",
+      			"downloads": 1470,
+      			"tasks": [
+
+      			],
+      			"plans": [
+
+      			],
+      			"created_at": "2020-05-07 12:12:19 -0700",
+      			"updated_at": "2020-05-07 12:12:19 -0700",
+      			"deleted_at": null,
+      			"deleted_for": null
+      		},
+      		"feedback_score": 71,
+      		"homepage_url": "https://github.com/voxpupuli/puppet-stash",
+      		"issues_url": "https://github.com/voxpupuli/puppet-stash/issues"
+      	},
+      	"joshbeard/bamboo": {
+      		"uri": "/v3/modules/joshbeard-bamboo",
+      		"slug": "joshbeard-bamboo",
+      		"name": "bamboo",
+      		"downloads": 21765,
+      		"created_at": "2015-10-07 11:38:36 -0700",
+      		"updated_at": "2019-04-23 15:46:31 -0700",
+      		"deprecated_at": null,
+      		"deprecated_for": null,
+      		"superseded_by": null,
+      		"supported": false,
+      		"endorsement": null,
+      		"module_group": "base",
+      		"owner": {
+      			"uri": "/v3/users/joshbeard",
+      			"slug": "joshbeard",
+      			"username": "joshbeard",
+      			"gravatar_id": "bbcb81160319d54ea616b2bd48b806b4"
+      		},
+      		"current_release": {
+      			"uri": "/v3/releases/joshbeard-bamboo-3.6.0",
+      			"slug": "joshbeard-bamboo-3.6.0",
+      			"module": {
+      				"uri": "/v3/modules/joshbeard-bamboo",
+      				"slug": "joshbeard-bamboo",
+      				"name": "bamboo",
+      				"deprecated_at": null,
+      				"owner": {
+      					"uri": "/v3/users/joshbeard",
+      					"slug": "joshbeard",
+      					"username": "joshbeard",
+      					"gravatar_id": "bbcb81160319d54ea616b2bd48b806b4"
+      				}
+      			},
+      			"version": "3.6.0",
+      			"metadata": {
+      				"name": "joshbeard-bamboo",
+      				"version": "3.6.0",
+      				"author": "joshbeard",
+      				"summary": "Manages the installation of Atlassian Bamboo",
+      				"license": "Apache-2.0",
+      				"source": "https://github.com/joshbeard/puppet-bamboo",
+      				"project_page": "https://github.com/joshbeard/puppet-bamboo",
+      				"issues_url": "https://github.com/joshbeard/puppet-bamboo/issues",
+      				"dependencies": [{
+      						"name": "puppetlabs-stdlib",
+      						"version_requirement": ">= 4.6.0 <6.0.0"
+      					},
+      					{
+      						"name": "puppet-archive",
+      						"version_requirement": ">= 1.0.0 < 4.0.0"
+      					}
+      				],
+      				"operatingsystem_support": [{
+      						"operatingsystem": "RedHat",
+      						"operatingsystemrelease": [
+      							"6",
+      							"7"
+      						]
+      					},
+      					{
+      						"operatingsystem": "CentOS",
+      						"operatingsystemrelease": [
+      							"6",
+      							"7"
+      						]
+      					},
+      					{
+      						"operatingsystem": "OracleLinux",
+      						"operatingsystemrelease": [
+      							"6",
+      							"7"
+      						]
+      					},
+      					{
+      						"operatingsystem": "Scientific",
+      						"operatingsystemrelease": [
+      							"6",
+      							"7"
+      						]
+      					},
+      					{
+      						"operatingsystem": "Debian",
+      						"operatingsystemrelease": [
+      							"7",
+      							"8",
+      							"9"
+      						]
+      					},
+      					{
+      						"operatingsystem": "Ubuntu",
+      						"operatingsystemrelease": [
+      							"12.04",
+      							"14.04",
+      							"16.04",
+      							"18.04"
+      						]
+      					}
+      				],
+      				"requirements": [{
+      					"name": "puppet",
+      					"version_requirement": ">= 4.7.0 < 7.0.0"
+      				}],
+      				"tags": [
+      					"bamboo",
+      					"atlassian"
+      				],
+      				"pdk-version": "1.7.1",
+      				"template-url": "file:///opt/puppetlabs/pdk/share/cache/pdk-templates.git",
+      				"template-ref": "1.7.1-0-g810b982"
+      			},
+      			"tags": [
+      				"bamboo",
+      				"atlassian"
+      			],
+      			"supported": false,
+      			"pdk": true,
+      			"validation_score": 100,
+      			"file_uri": "/v3/files/joshbeard-bamboo-3.6.0.tar.gz",
+      			"file_size": 25817,
+      			"file_md5": "bb489310739c92fb67e14b8b4bc78d79",
+      			"file_sha256": "cec045433b0301f71b9988c2fdfcace21020b7678e113b05ca6c06a2fc924ace",
+      			"downloads": 6669,
+      			"tasks": [
+
+      			],
+      			"plans": [
+
+      			],
+      			"created_at": "2019-04-23 15:46:31 -0700",
+      			"updated_at": "2019-07-03 15:45:15 -0700",
+      			"deleted_at": null,
+      			"deleted_for": null
+      		},
+      		"feedback_score": null,
+      		"homepage_url": "https://github.com/joshbeard/puppet-bamboo",
+      		"issues_url": "https://github.com/joshbeard/puppet-bamboo/issues"
+      	},
+      	"thewired/bitbucket": {
+      		"uri": "/v3/modules/thewired-bitbucket",
+      		"slug": "thewired-bitbucket",
+      		"name": "bitbucket",
+      		"downloads": 1403211,
+      		"created_at": "2015-11-20 21:08:01 -0800",
+      		"updated_at": "2020-05-14 23:28:37 -0700",
+      		"deprecated_at": null,
+      		"deprecated_for": null,
+      		"superseded_by": null,
+      		"supported": false,
+      		"endorsement": null,
+      		"module_group": "base",
+      		"owner": {
+      			"uri": "/v3/users/thewired",
+      			"slug": "thewired",
+      			"username": "thewired",
+      			"gravatar_id": "b4652360988b30a48e8149c775e058bd"
+      		},
+      		"current_release": {
+      			"uri": "/v3/releases/thewired-bitbucket-2.3.0",
+      			"slug": "thewired-bitbucket-2.3.0",
+      			"module": {
+      				"uri": "/v3/modules/thewired-bitbucket",
+      				"slug": "thewired-bitbucket",
+      				"name": "bitbucket",
+      				"deprecated_at": null,
+      				"owner": {
+      					"uri": "/v3/users/thewired",
+      					"slug": "thewired",
+      					"username": "thewired",
+      					"gravatar_id": "b4652360988b30a48e8149c775e058bd"
+      				}
+      			},
+      			"version": "2.3.0",
+      			"metadata": {
+      				"name": "thewired-bitbucket",
+      				"version": "2.3.0",
+      				"author": "thewired",
+      				"summary": "Install Atlassian Bitbucket Server",
+      				"license": "MIT",
+      				"source": "https://github.com/danofthewired/puppet-bitbucket.git",
+      				"project_page": "https://github.com/danofthewired/puppet-bitbucket",
+      				"issues_url": "https://github.com/danofthewired/puppet-bitbucket/issues",
+      				"description": "Module to install Atlassian Bitbucket Server/Data Center. On-premises source code management for Git that's secure, fast, and enterprise grade.",
+      				"operatingsystem_support": [{
+      						"operatingsystem": "RedHat",
+      						"operatingsystemrelease": [
+      							"6",
+      							"7"
+      						]
+      					},
+      					{
+      						"operatingsystem": "CentOS",
+      						"operatingsystemrelease": [
+      							"6",
+      							"7"
+      						]
+      					},
+      					{
+      						"operatingsystem": "Ubuntu",
+      						"operatingsystemrelease": [
+      							"12.04",
+      							"14.04",
+      							"16.04",
+      							"17.04",
+      							"18.04"
+      						]
+      					},
+      					{
+      						"operatingsystem": "Debian",
+      						"operatingsystemrelease": [
+      							"7",
+      							"8",
+      							"9"
+      						]
+      					}
+      				],
+      				"dependencies": [{
+      						"name": "puppetlabs/stdlib",
+      						"version_requirement": ">= 4.0.0"
+      					},
+      					{
+      						"name": "puppetlabs/inifile",
+      						"version_requirement": ">= 1.0.0"
+      					},
+      					{
+      						"name": "mkrakowitzer/deploy",
+      						"version_requirement": ">= 0.0.3"
+      					},
+      					{
+      						"name": "puppet/staging",
+      						"version_requirement": ">= 1.0.0"
+      					},
+      					{
+      						"name": "puppet/archive",
+      						"version_requirement": ">= 0.4.4"
+      					}
+      				],
+      				"requirements": [{
+      					"name": "puppet",
+      					"version_requirement": ">=5.5.10 < 7.0.0"
+      				}]
+      			},
+      			"tags": [
+
+      			],
+      			"supported": false,
+      			"pdk": false,
+      			"validation_score": 100,
+      			"file_uri": "/v3/files/thewired-bitbucket-2.3.0.tar.gz",
+      			"file_size": 38714,
+      			"file_md5": "71cd2e0220e27ba2f4cf3dc6bf174687",
+      			"file_sha256": "3167cc9ea4f4474cdbdaa5bcb1f919e1c8e841eace56201a48e524b9aa00d366",
+      			"downloads": 1151,
+      			"tasks": [
+
+      			],
+      			"plans": [
+
+      			],
+      			"created_at": "2020-05-14 23:28:37 -0700",
+      			"updated_at": "2020-05-14 23:28:37 -0700",
+      			"deleted_at": null,
+      			"deleted_for": null
+      		},
+      		"feedback_score": 75,
+      		"homepage_url": "https://github.com/danofthewired/puppet-bitbucket",
+      		"issues_url": "https://github.com/danofthewired/puppet-bitbucket/issues"
+      	}
+      }
+
+      $(document).ready(function() {
+
+        $("#apply").click(function() {
+          var integrations = JSON.parse($("#code").text());
+            $("#integrations").empty();
+
+            for (var integration of integrations) {
+              var container = $("<div>").appendTo("#integrations").addClass("module").attr("id", integration.name);
+              $("<img>").appendTo(container).addClass("icon").attr("src", integration.icon);
+              $("<h3>").appendTo(container).addClass("title").text(integration.name);
+              $("<div>").appendTo(container).addClass("description").text(integration.description);
+
+              var modlist = $("<ul>").appendTo(container).addClass("modules");
+              for (var modname of integration.modules) {
+                $.getJSON( "https://forgeapi.puppet.com/v3/modules/"+modname, function( results ) {
+
+                  var module = results[modname];
+                  var forgename = module.slug.replace("-", "/");
+                  var released  = new Date(module.current_release.updated_at.split(" ")[0]).toDateString();
+
+                  modlist.append(
+                    $("<li>").append(
+                      $("<div>", {"class": "inner"}).append(
+                        $("<a>").attr("href", "https://forge.puppet.com/"+forgename).append(
+                          $("<div>", {"class": "name"}).text(forgename)
+                        ),
+                        $("<p>", {"class": "summary"}).text(module.current_release.metadata.summary),
+                        $("<div>", {"class": "details"}).append(
+                          $("<div>", {"class": "left"}).append(
+                            $("<strong>").text("Author"),
+                            $("<span>").text(module.current_release.metadata.author)
+                          ),
+                          $("<div>", {"class": "right"}).append(
+                            $("<strong>").text("Last release"),
+                            $("<span>").text(module.current_release.version+" ("+released+")")
+                          )
+                        )
+                      )
+                    )
+                  );
+                });
+              }
+            }
+          });
+        });
+    </script>
+
+    <style>
+    </style>
+
+	</head>
+	<body>
+    <h1>Look at some of our nifty integrations!</h1>
+    <div id="config">
+      <pre><code id="code" contenteditable="true">[
+  {
+    "name": "Atlassian",
+    "icon": "https://www.atlassian.com/assets/img/icons/imkt/imkt-navbar__charlie-logo.svg",
+    "description": "Atlassian is an Australian enterprise software multinational that develops products for software development, project management, and content management. Its well-known products include issue tracking application Jira and its team collaboration and wiki product Confluence.",
+    "search": "atlassian",
+    "modules": [
+      "puppet/confluence",
+      "puppet/jira",
+      "puppet/stash",
+      "joshbeard/bamboo",
+      "thewired/bitbucket"
+    ]
+},
+{
+    "name": "Atlassian",
+    "icon": "https://www.atlassian.com/assets/img/icons/imkt/imkt-navbar__charlie-logo.svg",
+    "description": "Atlassian is an Australian enterprise software multinational that develops products for software development, project management, and content management. Its well-known products include issue tracking application Jira and its team collaboration and wiki product Confluence.",
+    "search": "atlassian",
+    "modules": [
+      "puppet/confluence",
+      "puppet/jira",
+      "puppet/stash",
+      "joshbeard/bamboo",
+      "thewired/bitbucket"
+    ]
+  }
+]</pre></code>
+      <input type="button" id="apply" value="Render Widgets" />
+    </div>
+    <div id="integrations"></div>
+	</body>
+</html>

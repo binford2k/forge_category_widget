@@ -1,0 +1,90 @@
+#config {
+  float: right;
+  width: 500px;
+}
+#config * {
+  width: 98%;
+}
+#config code {
+  white-space: break-spaces;
+}
+
+#integrations {
+  width: 32rem;
+  background-color: #f5f8fa;
+  box-shadow: 0.5rem 0.5rem 0.25rem #f1f0f0;
+  border: 1px solid #ccd4d9;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+#integrations .icon {
+  float: left;
+  width: 64px;
+  margin: 6px 6px 6px 0;
+}
+#integrations .title {
+  margin-bottom: 0;
+}
+#integrations .description {
+  margin-left: 70px;
+}
+#integrations .modules {
+  clear: left;
+  margin: 0 0 0 70px;
+  padding-left: 0;
+  font-size: 0.95em;
+  height: 150px;
+  overflow-y: scroll;
+}
+#integrations .modules li {
+  margin-bottom: 0.5rem;
+  list-style: none;
+}
+#integrations .modules li a {
+  font-weight: bolder;
+  font-size: 1.25rem;
+  color: #ffae1a;
+  text-decoration: none;
+}
+#integrations .modules .summary {
+  margin: 0 0 0.25rem 0;
+}
+#integrations .details {
+  display: flex;
+  flex-flow: row;
+}
+#integrations .left,
+#integrations .right {
+  display: flex;
+  flex-flow: column;
+  width: 50%;
+}
+#integrations .footer p {
+  text-align: right;
+  margin: 0;
+}
+#integrations hr {
+  border: 0;
+  height: 1px;
+  background-color: #e6e6e6;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+#integrations .module:last-child hr {
+  display: none;
+}
+
+/* just so Safari shows scrollbars for our little widgets */
+#integrations .modules::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+#integrations .modules::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .0);
+  box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+#integrations .module:hover .modules::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, .5);
+}
+
+/* end safari scrolly madness */
