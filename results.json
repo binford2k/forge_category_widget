@@ -1,5 +1,5 @@
 {
-	"puppet/confluence": {
+	"puppet-confluence": {
 		"uri": "/v3/modules/puppet-confluence",
 		"slug": "puppet-confluence",
 		"name": "confluence",
@@ -125,7 +125,7 @@
 		"homepage_url": "https://github.com/voxpupuli/puppet-confluence",
 		"issues_url": "https://github.com/voxpupuli/puppet-confluence/issues"
 	},
-	"puppet/jira": {
+	"puppet-jira": {
 		"uri": "/v3/modules/puppet-jira",
 		"slug": "puppet-jira",
 		"name": "jira",
@@ -253,7 +253,7 @@
 		"homepage_url": "https://github.com/voxpupuli/puppet-jira.git",
 		"issues_url": "https://github.com/voxpupuli/puppet-jira/issues"
 	},
-	"puppet/stash": {
+	"puppet-stash": {
 		"uri": "/v3/modules/puppet-stash",
 		"slug": "puppet-stash",
 		"name": "stash",
@@ -374,7 +374,7 @@
 		"homepage_url": "https://github.com/voxpupuli/puppet-stash",
 		"issues_url": "https://github.com/voxpupuli/puppet-stash/issues"
 	},
-	"joshbeard/bamboo": {
+	"joshbeard-bamboo": {
 		"uri": "/v3/modules/joshbeard-bamboo",
 		"slug": "joshbeard-bamboo",
 		"name": "bamboo",
@@ -512,7 +512,7 @@
 		"homepage_url": "https://github.com/joshbeard/puppet-bamboo",
 		"issues_url": "https://github.com/joshbeard/puppet-bamboo/issues"
 	},
-	"thewired/bitbucket": {
+	"thewired-bitbucket": {
 		"uri": "/v3/modules/thewired-bitbucket",
 		"slug": "thewired-bitbucket",
 		"name": "bitbucket",
