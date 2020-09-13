@@ -8,11 +8,16 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script type="text/javascript" charset="utf-8">
+      results   = {}; // API responses, de-deuplicated
+      deferreds = [];
+
       $(document).ready(function() {
 
         $("#apply").click(function() {
-          var results   = {} // API responses, de-deuplicated
-          var deferreds = []
+/*
+          var results   = {}; // API responses, de-deuplicated
+          var deferreds = [];
+*/
 
           var integrations = JSON.parse($("#code").text());
           $("#integrations").empty();
