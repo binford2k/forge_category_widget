@@ -11,49 +11,67 @@
       $(document).ready(function() {
 
         $("#apply").click(function() {
+          var results   = {} // API responses, de-deuplicated
+          var deferreds = []
+
           var integrations = JSON.parse($("#code").text());
-            $("#integrations").empty();
+          $("#integrations").empty();
 
+          for (var integration of integrations) {
+            for (var modname of integration.modules) {
+              if (! results.hasOwnProperty(modname)) {
+//                 var deferred = $.getJSON( "https://forgeapi.puppet.com/v3/modules/"+modname, function(results) {
+                var deferred = $.getJSON( "data/"+modname+".json", function(data) {
+                  results[modname] = data;
+                });
+                deferreds.push(deferred);
+              }
+            }
+
+            var container = $("<div>").appendTo("#integrations").addClass("module").attr("id", integration.name);
+            $("<img>").appendTo(container).addClass("icon").attr("src", integration.icon);
+            $("<h3>").appendTo(container).addClass("title").text(integration.name);
+            $("<div>").appendTo(container).addClass("description").text(integration.description);
+          }
+
+          $.when.apply($, deferreds).then(function() {
             for (var integration of integrations) {
-              var container = $("<div>").appendTo("#integrations").addClass("module").attr("id", integration.name);
-              $("<img>").appendTo(container).addClass("icon").attr("src", integration.icon);
-              $("<h3>").appendTo(container).addClass("title").text(integration.name);
-              $("<div>").appendTo(container).addClass("description").text(integration.description);
+              var container = $("#integrations .module#"+integration.name);
+              var modlist   = $("<ul>").appendTo(container).addClass("modules");
 
-              var modlist = $("<ul>").appendTo(container).addClass("modules");
               for (var modname of integration.modules) {
-//                 $.getJSON( "https://forgeapi.puppet.com/v3/modules/"+modname, function(results) {
-                $.getJSON( "data/"+modname+".json", function(module, modlist) {
+                var module    = results[modname];
+                var forgename = module.slug.replace("-", "/");
+                var released  = new Date(module.current_release.updated_at.split(" ")[0]).toDateString();
 
-//                   var module = results[modname];
-                  var forgename = module.slug.replace("-", "/");
-                  var released  = new Date(module.current_release.updated_at.split(" ")[0]).toDateString();
-
-                  modlist.append(
-                    $("<li>").append(
-                      $("<div>", {"class": "inner"}).append(
-                        $("<a>").attr("href", "https://forge.puppet.com/"+forgename).append(
-                          $("<div>", {"class": "name"}).text(forgename)
+                modlist.append(
+                  $("<li>").append(
+                    $("<div>", {"class": "inner"}).append(
+                      $("<a>").attr("href", "https://forge.puppet.com/"+forgename).append(
+                        $("<div>", {"class": "name"}).text(forgename)
+                      ),
+                      $("<p>", {"class": "summary"}).text(module.current_release.metadata.summary),
+                      $("<div>", {"class": "details"}).append(
+                        $("<div>", {"class": "left"}).append(
+                          $("<strong>").text("Author"),
+                          $("<span>").text(module.current_release.metadata.author)
                         ),
-                        $("<p>", {"class": "summary"}).text(module.current_release.metadata.summary),
-                        $("<div>", {"class": "details"}).append(
-                          $("<div>", {"class": "left"}).append(
-                            $("<strong>").text("Author"),
-                            $("<span>").text(module.current_release.metadata.author)
-                          ),
-                          $("<div>", {"class": "right"}).append(
-                            $("<strong>").text("Last release"),
-                            $("<span>").text(module.current_release.version+" ("+released+")")
-                          )
+                        $("<div>", {"class": "right"}).append(
+                          $("<strong>").text("Last release"),
+                          $("<span>").text(module.current_release.version+" ("+released+")")
                         )
                       )
                     )
-                  );
-                });
+                  )
+                );
+
               }
             }
           });
+
         });
+
+      });
     </script>
 
     <style>
