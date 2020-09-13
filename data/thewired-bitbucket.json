@@ -1,0 +1,131 @@
+{
+		"uri": "/v3/modules/thewired-bitbucket",
+		"slug": "thewired-bitbucket",
+		"name": "bitbucket",
+		"downloads": 1403211,
+		"created_at": "2015-11-20 21:08:01 -0800",
+		"updated_at": "2020-05-14 23:28:37 -0700",
+		"deprecated_at": null,
+		"deprecated_for": null,
+		"superseded_by": null,
+		"supported": false,
+		"endorsement": null,
+		"module_group": "base",
+		"owner": {
+			"uri": "/v3/users/thewired",
+			"slug": "thewired",
+			"username": "thewired",
+			"gravatar_id": "b4652360988b30a48e8149c775e058bd"
+		},
+		"current_release": {
+			"uri": "/v3/releases/thewired-bitbucket-2.3.0",
+			"slug": "thewired-bitbucket-2.3.0",
+			"module": {
+				"uri": "/v3/modules/thewired-bitbucket",
+				"slug": "thewired-bitbucket",
+				"name": "bitbucket",
+				"deprecated_at": null,
+				"owner": {
+					"uri": "/v3/users/thewired",
+					"slug": "thewired",
+					"username": "thewired",
+					"gravatar_id": "b4652360988b30a48e8149c775e058bd"
+				}
+			},
+			"version": "2.3.0",
+			"metadata": {
+				"name": "thewired-bitbucket",
+				"version": "2.3.0",
+				"author": "thewired",
+				"summary": "Install Atlassian Bitbucket Server",
+				"license": "MIT",
+				"source": "https://github.com/danofthewired/puppet-bitbucket.git",
+				"project_page": "https://github.com/danofthewired/puppet-bitbucket",
+				"issues_url": "https://github.com/danofthewired/puppet-bitbucket/issues",
+				"description": "Module to install Atlassian Bitbucket Server/Data Center. On-premises source code management for Git that's secure, fast, and enterprise grade.",
+				"operatingsystem_support": [{
+						"operatingsystem": "RedHat",
+						"operatingsystemrelease": [
+							"6",
+							"7"
+						]
+					},
+					{
+						"operatingsystem": "CentOS",
+						"operatingsystemrelease": [
+							"6",
+							"7"
+						]
+					},
+					{
+						"operatingsystem": "Ubuntu",
+						"operatingsystemrelease": [
+							"12.04",
+							"14.04",
+							"16.04",
+							"17.04",
+							"18.04"
+						]
+					},
+					{
+						"operatingsystem": "Debian",
+						"operatingsystemrelease": [
+							"7",
+							"8",
+							"9"
+						]
+					}
+				],
+				"dependencies": [{
+						"name": "puppetlabs/stdlib",
+						"version_requirement": ">= 4.0.0"
+					},
+					{
+						"name": "puppetlabs/inifile",
+						"version_requirement": ">= 1.0.0"
+					},
+					{
+						"name": "mkrakowitzer/deploy",
+						"version_requirement": ">= 0.0.3"
+					},
+					{
+						"name": "puppet/staging",
+						"version_requirement": ">= 1.0.0"
+					},
+					{
+						"name": "puppet/archive",
+						"version_requirement": ">= 0.4.4"
+					}
+				],
+				"requirements": [{
+					"name": "puppet",
+					"version_requirement": ">=5.5.10 < 7.0.0"
+				}]
+			},
+			"tags": [
+
+			],
+			"supported": false,
+			"pdk": false,
+			"validation_score": 100,
+			"file_uri": "/v3/files/thewired-bitbucket-2.3.0.tar.gz",
+			"file_size": 38714,
+			"file_md5": "71cd2e0220e27ba2f4cf3dc6bf174687",
+			"file_sha256": "3167cc9ea4f4474cdbdaa5bcb1f919e1c8e841eace56201a48e524b9aa00d366",
+			"downloads": 1151,
+			"tasks": [
+
+			],
+			"plans": [
+
+			],
+			"created_at": "2020-05-14 23:28:37 -0700",
+			"updated_at": "2020-05-14 23:28:37 -0700",
+			"deleted_at": null,
+			"deleted_for": null
+		},
+		"feedback_score": 75,
+		"homepage_url": "https://github.com/danofthewired/puppet-bitbucket",
+		"issues_url": "https://github.com/danofthewired/puppet-bitbucket/issues"
+	}
+

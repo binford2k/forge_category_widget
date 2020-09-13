@@ -23,9 +23,9 @@
               var modlist = $("<ul>").appendTo(container).addClass("modules");
               for (var modname of integration.modules) {
 //                 $.getJSON( "https://forgeapi.puppet.com/v3/modules/"+modname, function(results) {
-                $.getJSON( "results.json", function(results) {
+                $.getJSON( "data/"+modname+".json", function(module, modlist) {
 
-                  var module = results[modname];
+//                   var module = results[modname];
                   var forgename = module.slug.replace("-", "/");
                   var released  = new Date(module.current_release.updated_at.split(" ")[0]).toDateString();
 
