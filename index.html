@@ -37,7 +37,8 @@
 
           $.when.apply($, deferreds).then(function() {
             modules = {};
-            for (var module of deferreds) {
+            for (var response of deferreds) {
+              module = response.responseJSON;
               modules[module.slug] = module;
             }
 
