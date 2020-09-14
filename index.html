@@ -13,19 +13,12 @@
       $(document).ready(function() {
 
         $("#apply").click(function() {
-/*
-          var results   = {}; // API responses, de-deuplicated
-          var deferreds = [];
-*/
-
           var integrations = JSON.parse($("#code").text());
           $("#integrations").empty();
 
           for (var integration of integrations) {
             for (var modname of integration.modules) {
-              console.log(modname);
-
-//                 var deferred = $.getJSON( "https://forgeapi.puppet.com/v3/modules/"+modname, function(results) {
+//               deferreds.push($.getJSON( "https://forgeapi.puppet.com/v3/modules/"+modname, function(results));
               deferreds.push($.getJSON( "data/"+modname+".json"));
             }
 
@@ -36,7 +29,7 @@
           }
 
           $.when.apply($, deferreds).then(function() {
-            modules = {};
+            var modules = {};
             for (var response of deferreds) {
               module = response.responseJSON;
               modules[module.slug] = module;
@@ -103,16 +96,18 @@
     ]
 },
 {
-    "name": "Atlassian",
-    "icon": "https://www.atlassian.com/assets/img/icons/imkt/imkt-navbar__charlie-logo.svg",
-    "description": "Atlassian is an Australian enterprise software multinational that develops products for software development, project management, and content management. Its well-known products include issue tracking application Jira and its team collaboration and wiki product Confluence.",
-    "search": "atlassian",
+    "name": "Oracle",
+    "icon": "https://sybyl.com/wp-content/uploads/2019/11/Oracle-Logo-For-Website.png",
+    "description": "Oracle sells database software and technology, cloud engineered systems, and enterprise software products—particularly its own brands of database management systems.",
+    "search": "oracle",
     "modules": [
-      "puppet-confluence",
-      "puppet-jira",
-      "puppet-stash",
-      "joshbeard-bamboo",
-      "thewired-bitbucket"
+      "enterprisemodules-oci_config",
+      "enterprisemodules-ora_cis",
+      "enterprisemodules-ora_config",
+      "enterprisemodules-ora_install",
+      "enterprisemodules-ovm_config",
+      "enterprisemodules-wls_config",
+      "enterprisemodules-wls_install"
     ]
   }
 ]</pre></code>

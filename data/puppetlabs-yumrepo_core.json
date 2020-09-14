@@ -1,0 +1,1 @@
+{"current_release":{"metadata":{"summary":"Manage client yum repo configurations by parsing yum INI configuration files.","author":"puppetlabs"},"version":"1.0.7","updated_at":"2020-04-13 07:44:47 -0700"},"slug":"puppetlabs-yumrepo_core"}

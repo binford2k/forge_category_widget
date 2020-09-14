@@ -1,0 +1,1 @@
+{"current_release":{"metadata":{"summary":"This module provides a report processor that sends events to email addresses based on tagging of resources","author":"puppetlabs"},"version":"3.3.0","updated_at":"2020-07-01 05:11:47 -0700"},"slug":"puppetlabs-tagmail"}

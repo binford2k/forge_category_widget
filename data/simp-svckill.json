@@ -1,0 +1,1 @@
+{"current_release":{"metadata":{"summary":"Disables all services that are not controlled by Puppet.","author":"SIMP Team"},"version":"3.6.0","updated_at":"2020-03-09 06:38:14 -0700"},"slug":"simp-svckill"}

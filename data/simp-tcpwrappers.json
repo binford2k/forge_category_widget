@@ -1,0 +1,1 @@
+{"current_release":{"metadata":{"summary":"manages /etc/hosts.allow (/etc/hosts.deny is ALL:ALL by default)","author":"SIMP Team"},"version":"6.2.0","updated_at":"2020-03-11 12:43:03 -0700"},"slug":"simp-tcpwrappers"}

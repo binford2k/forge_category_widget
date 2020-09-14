@@ -1,0 +1,1 @@
+{"current_release":{"metadata":{"summary":"configure SIMP apache & component sites (NOTE: legacy, conflicts with puppetlabs-apache)","author":"SIMP Team"},"version":"6.2.0","updated_at":"2019-08-01 11:23:38 -0700"},"slug":"simp-simp_apache"}
