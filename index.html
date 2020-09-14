@@ -8,7 +8,6 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script type="text/javascript" charset="utf-8">
-      results   = {}; // API responses, de-deuplicated
       deferreds = [];
 
       $(document).ready(function() {
@@ -26,13 +25,8 @@
             for (var modname of integration.modules) {
               console.log(modname);
 
-              if (! results.hasOwnProperty(modname)) {
 //                 var deferred = $.getJSON( "https://forgeapi.puppet.com/v3/modules/"+modname, function(results) {
-                var deferred = $.getJSON( "data/"+modname+".json", function(data, modname) {
-                  results[modname] = data;
-                });
-                deferreds.push(deferred);
-              }
+              deferreds.push($.getJSON( "data/"+modname+".json"));
             }
 
             var container = $("<div>").appendTo("#integrations").addClass("module").attr("id", integration.name);
@@ -42,12 +36,17 @@
           }
 
           $.when.apply($, deferreds).then(function() {
+            modules = {};
+            for (var module of deferreds) {
+              results[module.slug] = module;
+            }
+
             for (var integration of integrations) {
               var container = $("#integrations .module#"+integration.name);
               var modlist   = $("<ul>").appendTo(container).addClass("modules");
 
               for (var modname of integration.modules) {
-                var module    = results[modname];
+                var module    = results[modname.replace("/", "-")];
                 var forgename = module.slug.replace("-", "/");
                 var released  = new Date(module.current_release.updated_at.split(" ")[0]).toDateString();
 
