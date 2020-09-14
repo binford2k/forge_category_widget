@@ -18,7 +18,8 @@
 
           for (var integration of integrations) {
             for (var modname of integration.modules) {
-//               deferreds.push($.getJSON( "https://forgeapi.puppet.com/v3/modules/"+modname, function(results));
+              // The Forge doesn't accept cross-domain requests, so for now I have to fake it with cached json files.
+              // deferreds.push($.getJSON( "https://forgeapi.puppet.com/v3/modules/"+modname, function(results));
               deferreds.push($.getJSON( "data/"+modname+".json"));
             }
 
@@ -90,6 +91,8 @@
 	<body>
     <h1>Look at some of our nifty integrations!</h1>
     <div id="config">
+      <h4>Widget Configuration:</h4>
+      <p>Press the render button below to generate the graphical widgets. You may edit the config if you'd like, just make sure that you use proper JSON syntax and only refer to supported/approved/partner modules.</p>
       <pre><code id="code" contenteditable="true">[
   {
     "name": "Atlassian",
