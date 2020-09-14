@@ -38,7 +38,7 @@
           $.when.apply($, deferreds).then(function() {
             modules = {};
             for (var module of deferreds) {
-              results[module.slug] = module;
+              modules[module.slug] = module;
             }
 
             for (var integration of integrations) {
@@ -46,7 +46,7 @@
               var modlist   = $("<ul>").appendTo(container).addClass("modules");
 
               for (var modname of integration.modules) {
-                var module    = results[modname.replace("/", "-")];
+                var module    = modules[modname.replace("/", "-")];
                 var forgename = module.slug.replace("-", "/");
                 var released  = new Date(module.current_release.updated_at.split(" ")[0]).toDateString();
 
