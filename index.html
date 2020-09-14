@@ -24,9 +24,11 @@
 
           for (var integration of integrations) {
             for (var modname of integration.modules) {
+              console.log(modname);
+
               if (! results.hasOwnProperty(modname)) {
 //                 var deferred = $.getJSON( "https://forgeapi.puppet.com/v3/modules/"+modname, function(results) {
-                var deferred = $.getJSON( "data/"+modname+".json", function(data) {
+                var deferred = $.getJSON( "data/"+modname+".json", function(data, modname) {
                   results[modname] = data;
                 });
                 deferreds.push(deferred);
