@@ -68,7 +68,7 @@
   border: 0;
   height: 1px;
   background-color: #e6e6e6;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(204, 212, 217, 0.75), rgba(0, 0, 0, 0));
 }
 #integrations .module:last-child hr {
   display: none;
