@@ -26,6 +26,15 @@
             $("<img>").appendTo(container).addClass("icon").attr("src", integration.icon);
             $("<h3>").appendTo(container).addClass("title").text(integration.name);
             $("<div>").appendTo(container).addClass("description").text(integration.description);
+            $("<ul>").appendTo(container).addClass("modules");
+
+            container.append(
+              $("<div>", {"class": "footer"}).append(
+                $("<p>").append(
+                  $("<a>").attr("href", "https://forge.puppet.com/modules?q="+integration.search).text("Find related modules on the Puppet Forge...")
+                )
+              )
+            );
           }
 
           $.when.apply($, deferreds).then(function() {
@@ -36,8 +45,7 @@
             }
 
             for (var integration of integrations) {
-              var container = $("#integrations .module#"+integration.name);
-              var modlist   = $("<ul>").appendTo(container).addClass("modules");
+              var modlist = $("#integrations .module#"+integration.name+" ul.modules");
 
               for (var modname of integration.modules) {
                 var module    = modules[modname.replace("/", "-")];

@@ -62,6 +62,7 @@
 #integrations .footer p {
   text-align: right;
   margin: 0;
+  font-size: 0.85em;
 }
 #integrations hr {
   border: 0;
