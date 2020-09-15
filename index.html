@@ -8,77 +8,80 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script type="text/javascript" charset="utf-8">
-      deferreds = [];
+      function render() {
+        deferreds = [];
+        var integrations = JSON.parse($("#code").text());
+        $("#integrations").empty();
 
-      $(document).ready(function() {
-
-        $("#apply").click(function() {
-          var integrations = JSON.parse($("#code").text());
-          $("#integrations").empty();
-
-          for (var integration of integrations) {
-            for (var modname of integration.modules) {
-              // The Forge doesn't accept cross-domain requests, so for now I have to fake it with cached json files.
-              // deferreds.push($.getJSON( "https://forgeapi.puppet.com/v3/modules/"+modname, function(results));
-              deferreds.push($.getJSON( "data/"+modname+".json"));
-            }
-
-            var container = $("<div>").appendTo("#integrations").addClass("module").attr("id", integration.name);
-            $("<img>").appendTo(container).addClass("icon").attr("src", integration.icon);
-            $("<h3>").appendTo(container).addClass("title").text(integration.name);
-            $("<div>").appendTo(container).addClass("description").text(integration.description);
-            $("<ul>").appendTo(container).addClass("modules");
-
-            container.append(
-              $("<div>", {"class": "footer"}).append(
-                $("<p>").append(
-                  $("<a>").attr("href", "https://forge.puppet.com/modules?q="+integration.search).text("Find related modules on the Puppet Forge...")
-                )
-              )
-            );
-            $("<hr>").appendTo(container).addClass("separator");
+        for (var integration of integrations) {
+          for (var modname of integration.modules) {
+            // The Forge doesn't accept cross-domain requests, so for now I have to fake it with cached json files.
+            // deferreds.push($.getJSON( "https://forgeapi.puppet.com/v3/modules/"+modname, function(results));
+            deferreds.push($.getJSON( "data/"+modname+".json"));
           }
 
-          $.when.apply($, deferreds).then(function() {
-            var modules = {};
-            for (var response of deferreds) {
-              module = response.responseJSON;
-              modules[module.slug] = module;
-            }
+          var container = $("<div>").appendTo("#integrations").addClass("module").attr("id", integration.name);
+          $("<img>").appendTo(container).addClass("icon").attr("src", integration.icon);
+          $("<h3>").appendTo(container).addClass("title").text(integration.name);
+          $("<div>").appendTo(container).addClass("description").text(integration.description);
+          $("<ul>").appendTo(container).addClass("modules");
 
-            for (var integration of integrations) {
-              var modlist = $("#integrations .module#"+integration.name+" ul.modules");
+          container.append(
+            $("<div>", {"class": "footer"}).append(
+              $("<p>").append(
+                $("<a>").attr("href", "https://forge.puppet.com/modules?q="+integration.search).text("Find related modules on the Puppet Forge...")
+              )
+            )
+          );
+          $("<hr>").appendTo(container).addClass("separator");
+        }
 
-              for (var modname of integration.modules) {
-                var module    = modules[modname.replace("/", "-")];
-                var forgename = module.slug.replace("-", "/");
-                var released  = new Date(module.current_release.updated_at.split(" ")[0]).toDateString();
+        $.when.apply($, deferreds).then(function() {
+          var modules = {};
+          for (var response of deferreds) {
+            module = response.responseJSON;
+            modules[module.slug] = module;
+          }
 
-                modlist.append(
-                  $("<li>").append(
-                    $("<div>", {"class": "inner"}).append(
-                      $("<a>").attr("href", "https://forge.puppet.com/"+forgename).append(
-                        $("<div>", {"class": "name"}).text(forgename)
+          for (var integration of integrations) {
+            var modlist = $("#integrations .module#"+integration.name+" ul.modules");
+
+            for (var modname of integration.modules) {
+              var module    = modules[modname.replace("/", "-")];
+              var forgename = module.slug.replace("-", "/");
+              var released  = new Date(module.current_release.updated_at.split(" ")[0]).toDateString();
+
+              modlist.append(
+                $("<li>").append(
+                  $("<div>", {"class": "inner"}).append(
+                    $("<a>").attr("href", "https://forge.puppet.com/"+forgename).append(
+                      $("<div>", {"class": "name"}).text(forgename)
+                    ),
+                    $("<p>", {"class": "summary"}).text(module.current_release.metadata.summary),
+                    $("<div>", {"class": "details"}).append(
+                      $("<div>", {"class": "left"}).append(
+                        $("<strong>").text("Author"),
+                        $("<span>").text(module.current_release.metadata.author)
                       ),
-                      $("<p>", {"class": "summary"}).text(module.current_release.metadata.summary),
-                      $("<div>", {"class": "details"}).append(
-                        $("<div>", {"class": "left"}).append(
-                          $("<strong>").text("Author"),
-                          $("<span>").text(module.current_release.metadata.author)
-                        ),
-                        $("<div>", {"class": "right"}).append(
-                          $("<strong>").text("Last release"),
-                          $("<span>").text(module.current_release.version+" ("+released+")")
-                        )
+                      $("<div>", {"class": "right"}).append(
+                        $("<strong>").text("Last release"),
+                        $("<span>").text(module.current_release.version+" ("+released+")")
                       )
                     )
                   )
-                );
+                )
+              );
 
-              }
             }
-          });
+          }
+        });
+      }
 
+      $(document).ready(function() {
+        render();
+
+        $("#apply").click(function() {
+          render();
         });
 
       });
@@ -89,10 +92,21 @@
 
 	</head>
 	<body>
-    <h1>Look at some of our nifty integrations!</h1>
     <div id="config">
       <h4>Widget Configuration:</h4>
-      <p>Press the render button below to generate the graphical widgets. You may edit the config if you'd like, just make sure that you use proper JSON syntax and only refer to supported/approved/partner modules.</p>
+      <p>
+        The configuration below was used to generate the widget in the content. As
+        you can see, it's just a bit of description and then a list of modules to
+        refer to. This could be embedded in any web content; a blog, a page, etc.
+      </p>
+      <p>
+        You may edit the config if you'd like, just make sure that you use proper
+        JSON syntax and only refer to supported/approved/partner modules. Press
+        the render button below to generate the graphical widgets.
+      </p>
+      <p>
+        <bold><strong>Reminder!</strong></bold> This is just a proof of concept.
+      </p>
       <input type="button" id="apply" value="Render Widgets" />
       <pre><code id="code" contenteditable="true">[
   {
@@ -107,24 +121,36 @@
       "joshbeard-bamboo",
       "thewired-bitbucket"
     ]
-},
-{
-    "name": "Oracle",
-    "icon": "https://sybyl.com/wp-content/uploads/2019/11/Oracle-Logo-For-Website.png",
-    "description": "Oracle sells database software and technology, cloud engineered systems, and enterprise software products—particularly its own brands of database management systems.",
-    "search": "oracle",
-    "modules": [
-      "enterprisemodules-oci_config",
-      "enterprisemodules-ora_cis",
-      "enterprisemodules-ora_config",
-      "enterprisemodules-ora_install",
-      "enterprisemodules-ovm_config",
-      "enterprisemodules-wls_config",
-      "enterprisemodules-wls_install"
-    ]
-  }
+}
 ]</pre></code>
     </div>
+    <h1>Puppet and Atlassian are besties!</h1>
+    <p>Atlassian creates products designed to unleash the power in every team.
+    This suite of DevOps tools support team functions across development
+    workflow, including: tracking, collaboration, code, build and ship.</p>
+
+    <p>Puppet as the IT automation engine fits nicely with the Atlassian suite
+    of tools, connecting the different phases of the development cycle and
+    working to accelerate the workflow from code commitment to production.</p>
+
+    <p>Puppet is such a powerful and flexible tool - automating tasks from
+    configuration management to code deployment to interacting with various APIs
+    - that we describe it as DevOps glue, connecting components in your
+    toolchain.</p>
+
     <div id="integrations"></div>
+
+    <h3>Integration Benefits</h3>
+    <p>The combined Puppet and Atlassian solution provides:</p>
+    <ul>
+      <li>Accuracy - repeatable process eliminates human error</li>
+      <li>Speed - automated workflow allows rapid development changes</li>
+      <li>Ubiquity - enforce consistency across environments</li>
+      <li>Control - role based or self-service</li>
+      <li>Knowledge - visibility across teams</li>
+    </ul>
+
+
+
 	</body>
 </html>
